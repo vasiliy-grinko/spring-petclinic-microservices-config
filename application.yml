@@ -81,7 +81,7 @@ spring:
     activate:
       on-profile: mysql
   datasource:
-    url: jdbc:mysql://mysql.mysql.svc.cluster.local:3306/petclinic?useSSL=false
+    url: jdbc:mysql://mysql.mysql.svc.cluster.local:3306/petclinic?useSSL=false&allowPublicKeyRetrieval=true
     username: ${MYSQL_USER}
     password: ${MYSQL_PASSWORD}
   sql:

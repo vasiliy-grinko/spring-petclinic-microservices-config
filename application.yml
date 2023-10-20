@@ -43,9 +43,9 @@ logging.level.org.springframework: INFO
 management:
   endpoint:
     metrics:
-      enabled: true
+      enabled: false
     prometheus:
-      enabled: true
+      enabled: false
   endpoints:
     web:
       exposure:
@@ -81,11 +81,13 @@ spring:
     activate:
       on-profile: mysql
   datasource:
-    url: jdbc:mysql://localhost:3306/petclinic?useSSL=false
-    username: root
-    password: petclinic
+    url: jdbc:mysql://mysql.mysql.svc.cluster.local:3306/petclinic?useSSL=false
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
   sql:
     init:
       schema-locations: classpath*:db/mysql/schema.sql
       data-locations: classpath*:db/mysql/data.sql
       init: ALWAYS
+      
+initialization-mode: never

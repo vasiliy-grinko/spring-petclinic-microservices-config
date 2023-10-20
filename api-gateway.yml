@@ -16,7 +16,11 @@ server:
 
 # Internationalization
 spring.messages.basename: messages/messages
-
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:80/
+      
 ---
 spring:
   config:

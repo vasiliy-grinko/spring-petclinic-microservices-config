@@ -6,7 +6,10 @@
 #   instance:
 #     # enable to register multiple app instances with a random server port
 #     instance-id: ${spring.application.name}:${random.uuid}
-
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:80/
 ---
 spring:
   config:

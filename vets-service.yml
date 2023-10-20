@@ -9,6 +9,11 @@ spring:
     activate:
       on-profile: default
     import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:80/
 # eureka:
 #   instance:
 #     # enable to register multiple app instances with a random server port
